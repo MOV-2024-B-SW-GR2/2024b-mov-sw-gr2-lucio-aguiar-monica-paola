@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="saludo_color">#964B00</color>
+    <color name="fondocolor">#673AB7</color>
 </resources>

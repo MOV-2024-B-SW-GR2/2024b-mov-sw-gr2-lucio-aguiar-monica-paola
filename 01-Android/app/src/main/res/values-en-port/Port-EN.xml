@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="prueba">Portrait ENGLISH</string>
+    <color name="saludocolor">#54EB12</color>
+    <color name="fondocolor" >#B82536</color>
 </resources>

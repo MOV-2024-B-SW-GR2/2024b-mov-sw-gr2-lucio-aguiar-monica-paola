@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">gr2sw2024b_mpla</string>
+    <string name="prueba">Hola es una prueba</string>
+    <color name="saludocolor">#00BCD4</color>
+    <color name="fondocolor">#673AB7</color>
+
 </resources>

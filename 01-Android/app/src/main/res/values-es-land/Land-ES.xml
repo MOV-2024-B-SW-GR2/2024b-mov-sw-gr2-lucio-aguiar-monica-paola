@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="prueba">Landscape ESPAÑOL</string>
+    <color name="saludocolor">#E91E63</color>
+    <color name="fondocolor" >#FFEB3B</color>
 </resources>
