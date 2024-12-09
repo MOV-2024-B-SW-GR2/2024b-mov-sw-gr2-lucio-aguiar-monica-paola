@@ -1,0 +1,3 @@
+2201820868,Maria Sanchez,20,30.6,Activo,isw632
+202015636,Andres Perez,20,31.65,Activo,ISW145
+201639852,Paloma,18,36.2,Activo,ISW263

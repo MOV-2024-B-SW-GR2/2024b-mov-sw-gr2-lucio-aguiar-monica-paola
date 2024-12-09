@@ -1,0 +1,3 @@
+ISW789,Validacion y Verificaion,3,7,Desconcoido
+ISW263,Programacion,3,2,Juan Velez
+ISW832,Profesionalismo,2,8,Henry Echeverria
