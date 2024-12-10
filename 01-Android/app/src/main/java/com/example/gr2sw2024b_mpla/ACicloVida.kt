@@ -17,7 +17,56 @@ class ACicloVida : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        mostrarSnackbar("OnCreate")
+
     }
+
+    override fun onStart() {
+        super.onStart()
+        mostrarSnackbar("OnStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mostrarSnackbar("OnResume")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        mostrarSnackbar("OnRestart")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mostrarSnackbar("OnPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mostrarSnackbar("OnStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mostrarSnackbar("OnDestroy")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.run {
+            // Guardamos las variables
+            putString("variableTextoGuardado", textoGlobal)
+        }
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        // Recuperar las variables
+        val textoRecuperado: String? = savedInstanceState.getString("variableTextoGuardado")
+        if(textoRecuperado != null){
+            mostrarSnackbar(textoRecuperado)
+        }
+    }
+
     var textoGlobal = ""
     fun mostrarSnackbar(texto: String){
         textoGlobal += texto

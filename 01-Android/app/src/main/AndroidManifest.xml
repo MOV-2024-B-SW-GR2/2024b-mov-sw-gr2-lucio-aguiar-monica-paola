@@ -7,11 +7,14 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="gr2sw2024b_mpla"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gr2sw2024b_mpla"
         tools:targetApi="31">
+        <activity
+            android:name=".BListView"
+            android:exported="false" />
         <activity
             android:name=".ACicloVida"
             android:exported="false" />
