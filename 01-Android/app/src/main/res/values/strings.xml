@@ -1,6 +1,9 @@
 <resources>
     <string name="prueba">Hola es una prueba</string>
-    <color name="saludocolor">#00BCD4</color>
-    <color name="fondocolor">#673AB7</color>
 
+    <string-array name="string_array_opciones_dialogo">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miercoles</item>
+    </string-array>
 </resources>
