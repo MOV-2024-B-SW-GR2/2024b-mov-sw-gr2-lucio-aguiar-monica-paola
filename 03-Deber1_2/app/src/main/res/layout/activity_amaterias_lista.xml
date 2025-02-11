@@ -12,9 +12,9 @@
         android:layout_width="409dp"
         android:layout_height="729dp"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
-
-        <androidx.recyclerview.widget.RecyclerView
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
+    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_materias"
             android:layout_width="match_parent"
             android:layout_height="597dp"
