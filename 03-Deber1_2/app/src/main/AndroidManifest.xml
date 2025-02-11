@@ -13,6 +13,13 @@
         android:theme="@style/Theme.EstudianteMateria"
         tools:targetApi="31">
         <activity
+            android:name=".AEstudiantesLista"
+            android:exported="false" />
+        <activity
+            android:name=".AMateriasLista"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
