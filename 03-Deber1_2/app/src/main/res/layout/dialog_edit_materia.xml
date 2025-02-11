@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/et_materia_name_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_materia_code_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Código"
+        android:inputType="text"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_professor_code_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Código del Profesor"
+        android:inputType="text"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <CheckBox
+        android:id="@+id/cb_materia_active_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Activo"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_update_materia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualizar"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"/>
+
+</LinearLayout>

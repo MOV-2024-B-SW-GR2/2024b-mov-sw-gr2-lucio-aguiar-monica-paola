@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_card_view_materia_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="0dp"
+    android:layout_marginVertical="1dp"
+    app:cardElevation="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="107dp">
+
+        <TextView
+            android:id="@+id/tv_materia_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:text="TextView"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_materia_codigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tv_materia_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_materia_name" />
+
+        <TextView
+            android:id="@+id/tv_materia_profesor_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Profesor ID:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_materia_codigo"
+            app:layout_constraintTop_toBottomOf="@+id/tv_materia_codigo" />
+
+        <TextView
+            android:id="@+id/tv_materia_estado_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Estado:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_materia_profesor_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_materia_profesor_label" />
+
+        <TextView
+            android:id="@+id/tv_materia_estado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_materia_estado_label"
+            app:layout_constraintStart_toEndOf="@+id/tv_materia_estado_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_materia_estado_label" />
+
+        <TextView
+            android:id="@+id/tv_materia_profesor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_materia_profesor_label"
+            app:layout_constraintStart_toEndOf="@+id/tv_materia_profesor_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_materia_profesor_label" />
+
+        <ImageButton
+            android:id="@+id/btn_more_options_materia"
+            android:layout_width="21dp"
+            android:layout_height="29dp"
+            android:layout_marginEnd="20dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_more_vertical" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
+
