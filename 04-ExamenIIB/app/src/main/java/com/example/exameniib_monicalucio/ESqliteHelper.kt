@@ -1,7 +1,7 @@
-package com.example.estudiantemateria
+package com.example.exameniib_monicalucio
 
 import android.content.ContentValues
-import com.example.estudiantemateria.Models.*;
+import com.example.exameniib_monicalucio.Models.*;
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
@@ -11,7 +11,7 @@ class ESqliteHelper(context: Context) : SQLiteOpenHelper(
     context,
     "moviles",
     null,
-    3
+    5
 ) {
 
     init {
@@ -57,6 +57,8 @@ class ESqliteHelper(context: Context) : SQLiteOpenHelper(
         carrera VARCHAR(30),
         IRA DOUBLE,
         idMateria INTEGER,
+        latitud DOUBLE,
+        longitud DOUBLE,
         FOREIGN KEY (idMateria) REFERENCES Materia(id)
     )
     """.trimIndent()
@@ -67,11 +69,11 @@ class ESqliteHelper(context: Context) : SQLiteOpenHelper(
         // Insertar 5 elementos en la tabla MATERIA
         val insertMaterias = """
     INSERT INTO MATERIA (nombre, codigo, estado, codigoProfesor) VALUES
-    ('Algoritmos ', 'ISW101', 1, 'PROF004'),
-    ('Programacion', 'PRO101', 1, 'PROF002'),
-    ('Base de Datos', 'BDD101', 1, 'PROF001'),
-    ('Redes', 'ISW501', 1, 'PROF005'),
-    ('Profesionalismo Informatico', 'ISW801', 1, 'PROF008');
+    ('Redes', 'RED101', 1, 'PROF006'),
+    ('Profesionalismo Informático', 'PROF101', 1, 'PROF007'),
+    ('Desarrollo de Juegos', 'JUE101', 1, 'PROF008'),
+    ('Algoritmos', 'ALG101', 1, 'PROF009'),
+    ('Programación', 'PROG101', 1, 'PROF010');
     """.trimIndent()
 
         db?.execSQL(insertMaterias)
@@ -79,12 +81,12 @@ class ESqliteHelper(context: Context) : SQLiteOpenHelper(
 
         // Insertar estudiantes en la tabla ESTUDIANTE
         val insertEstudiantes = """
-    INSERT INTO ESTUDIANTE (nombre, fechaNacimiento, carrera, IRA, idMateria) VALUES
-    ('Karina Lopez', '2001-01-15', 'Ingeniería', 4.5, 1),
-    ('Ana Fernandez', '2000-04-20', 'Ciencias', 4.2, 2),
-    ('Fabian Aguiar', '2000-03-30', 'Química', 3.8, 2),
-    ('Mauricio Martínez', '1999-04-10', 'Biología', 4.7, 2),
-    ('Luis Castro', '2001-05-25', 'Historia', 3.9, 2);
+    INSERT INTO ESTUDIANTE (nombre, fechaNacimiento, carrera, IRA, idMateria, latitud, longitud) VALUES
+        ('Karina Ortiz', '2001-01-15', 'Ingeniería', 4.5, 1, -0.172097, -78.475376), 
+        ('María Loma', '2002-02-20', 'Ciencias', 4.2, 2, -0.268127, -78.536933), 
+        ('Monica Aguiar', '2000-03-30', 'Química', 3.8, 3, -0.933054, -78.615748), 
+        ('Ana Villena', '1999-04-10', 'Biología', 4.7, 4, -0.327654, -78.183406),  
+        ('Luis Castro', '2001-05-25', 'Historia', 3.9, 5, -0.895732, -78.234590); 
     """.trimIndent()
 
         db?.execSQL(insertEstudiantes)
@@ -180,6 +182,8 @@ class ESqliteHelper(context: Context) : SQLiteOpenHelper(
         valoresAGuardar.put("carrera", estudiante.carrera)
         valoresAGuardar.put("IRA", estudiante.IRA)
         valoresAGuardar.put("idMateria", estudiante.idMateria)
+        valoresAGuardar.put("latitud", estudiante.latitud)
+        valoresAGuardar.put("longitud",estudiante.longitud)
         val resultadoGuardar = basedatosEscritura.insert("ESTUDIANTE", null, valoresAGuardar)
         basedatosEscritura.close()
         return resultadoGuardar != -1L
@@ -193,6 +197,9 @@ class ESqliteHelper(context: Context) : SQLiteOpenHelper(
         valoresAActualizar.put("carrera", estudiante.carrera)
         valoresAActualizar.put("IRA", estudiante.IRA)
         valoresAActualizar.put("idMateria", estudiante.idMateria)
+        valoresAActualizar.put("latitud", estudiante.latitud)
+        valoresAActualizar.put("longitud",estudiante.longitud)
+
         val resultadoActualizar = basedatosEscritura.update("ESTUDIANTE", valoresAActualizar, "codUnico=?", arrayOf(codUnico.toString()))
         basedatosEscritura.close()
         return resultadoActualizar != -1
@@ -219,8 +226,10 @@ class ESqliteHelper(context: Context) : SQLiteOpenHelper(
                 val carrera = resultadoConsultaLectura.getString(3)
                 val ira = resultadoConsultaLectura.getDouble(4)
                 val idMateria = resultadoConsultaLectura.getInt(5)
+                val latitud = resultadoConsultaLectura.getDouble(6)
+                val longitud = resultadoConsultaLectura.getDouble(7)
 
-                val estudiante = Estudiante(id, nombre, fechaNacimiento, carrera, ira, idMateria)
+                val estudiante = Estudiante(id, nombre, fechaNacimiento, carrera, ira, idMateria,latitud, longitud)
                 listaEstudiantes.add(estudiante)
 
                 // Log each student retrieved
@@ -250,7 +259,9 @@ class ESqliteHelper(context: Context) : SQLiteOpenHelper(
                     resultadoConsultaLectura.getString(2),
                     resultadoConsultaLectura.getString(3),
                     resultadoConsultaLectura.getDouble(4),
-                    resultadoConsultaLectura.getInt(5)
+                    resultadoConsultaLectura.getInt(5),
+                    resultadoConsultaLectura.getDouble(6),
+                    resultadoConsultaLectura.getDouble(7)
                 )
                 listaEstudiantes.add(estudiante)
             } while (resultadoConsultaLectura.moveToNext())
