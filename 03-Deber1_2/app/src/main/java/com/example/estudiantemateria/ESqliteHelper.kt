@@ -67,11 +67,11 @@ class ESqliteHelper(context: Context) : SQLiteOpenHelper(
         // Insertar 5 elementos en la tabla MATERIA
         val insertMaterias = """
     INSERT INTO MATERIA (nombre, codigo, estado, codigoProfesor) VALUES
-    ('Algoritmos ', 'MAT101', 1, 'PROF001'),
-    ('Física', 'FIS101', 1, 'PROF002'),
-    ('Química', 'QUI101', 1, 'PROF003'),
-    ('Biología', 'BIO101', 1, 'PROF004'),
-    ('Historia', 'HIS101', 1, 'PROF005');
+    ('Algoritmos ', 'ISW101', 1, 'PROF001'),
+    ('Programacion', 'FIS101', 1, 'PROF002'),
+    ('Base de Datos', 'QUI101', 1, 'PROF003'),
+    ('Redes', 'BIO101', 1, 'PROF004'),
+    ('', 'HIS101', 1, 'PROF005');
     """.trimIndent()
 
         db?.execSQL(insertMaterias)
