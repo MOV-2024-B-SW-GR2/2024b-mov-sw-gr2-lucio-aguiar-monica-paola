@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema de la aplicación -->
+    <style name="Theme.TuApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Otros estilos que tengas -->
+    </style>
+</resources>
